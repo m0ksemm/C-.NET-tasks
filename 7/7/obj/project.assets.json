@@ -1,0 +1,126 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "AcademyGroupLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "StudentLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AcademyGroupLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AcademyGroupLibrary.dll": {}
+        }
+      },
+      "PersonLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PersonLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PersonLibrary.dll": {}
+        }
+      },
+      "StudentLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "PersonLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StudentLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StudentLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AcademyGroupLibrary/1.0.0": {
+      "type": "project",
+      "path": "../AcademyGroupLibrary/AcademyGroupLibrary.csproj",
+      "msbuildProject": "../AcademyGroupLibrary/AcademyGroupLibrary.csproj"
+    },
+    "PersonLibrary/1.0.0": {
+      "type": "project",
+      "path": "../PersonLibrary/PersonLibrary.csproj",
+      "msbuildProject": "../PersonLibrary/PersonLibrary.csproj"
+    },
+    "StudentLibrary/1.0.0": {
+      "type": "project",
+      "path": "../StudentLibrary/StudentLibrary.csproj",
+      "msbuildProject": "../StudentLibrary/StudentLibrary.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "AcademyGroupLibrary >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\7\\7\\7.csproj",
+      "projectName": "7",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\7\\7\\7.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\7\\7\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\Admin\\Desktop\\7\\AcademyGroupLibrary\\AcademyGroupLibrary.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\7\\AcademyGroupLibrary\\AcademyGroupLibrary.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
