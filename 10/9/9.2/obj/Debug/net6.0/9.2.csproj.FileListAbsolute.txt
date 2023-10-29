@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\9\9.2\bin\Debug\net6.0\9.2.exe
+C:\Users\Admin\Desktop\9\9.2\bin\Debug\net6.0\9.2.deps.json
+C:\Users\Admin\Desktop\9\9.2\bin\Debug\net6.0\9.2.runtimeconfig.json
+C:\Users\Admin\Desktop\9\9.2\bin\Debug\net6.0\9.2.dll
+C:\Users\Admin\Desktop\9\9.2\bin\Debug\net6.0\9.2.pdb
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\9.2.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\9.2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\9.2.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\9.2.AssemblyInfo.cs
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\9.2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\9.2.dll
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\refint\9.2.dll
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\9.2.pdb
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\9.2.genruntimeconfig.cache
+C:\Users\Admin\Desktop\9\9.2\obj\Debug\net6.0\ref\9.2.dll
