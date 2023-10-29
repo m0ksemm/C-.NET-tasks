@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TChgi1/0H20WIjQgtDW07cyMkQwmthnQF7R6yfaxZeQ8O+k7efVekRlIyImqdTSTwS2VDqXeu6/eN9thkPff+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\7\\AcademyGroupLibrary\\AcademyGroupLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\soapformatter\\1.1.9\\soapformatter.1.1.9.nupkg.sha512"
+  ],
+  "logs": []
+}

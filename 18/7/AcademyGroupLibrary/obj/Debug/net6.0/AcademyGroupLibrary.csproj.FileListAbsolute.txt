@@ -1,0 +1,17 @@
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\AcademyGroupLibrary.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\AcademyGroupLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\AcademyGroupLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\AcademyGroupLibrary.AssemblyInfo.cs
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\AcademyGroupLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\bin\Debug\net6.0\AcademyGroupLibrary.deps.json
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\bin\Debug\net6.0\AcademyGroupLibrary.dll
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\bin\Debug\net6.0\AcademyGroupLibrary.pdb
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\bin\Debug\net6.0\PersonLibrary.dll
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\bin\Debug\net6.0\StudentLibrary.dll
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\bin\Debug\net6.0\StudentLibrary.pdb
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\bin\Debug\net6.0\PersonLibrary.pdb
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\AcademyGroupLibrary.csproj.CopyComplete
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\AcademyGroupLibrary.dll
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\refint\AcademyGroupLibrary.dll
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\AcademyGroupLibrary.pdb
+C:\Users\Admin\Desktop\7\AcademyGroupLibrary\obj\Debug\net6.0\ref\AcademyGroupLibrary.dll

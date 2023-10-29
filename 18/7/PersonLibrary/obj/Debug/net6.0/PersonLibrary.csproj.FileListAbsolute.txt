@@ -1,0 +1,12 @@
+C:\Users\Admin\Desktop\7\PersonLibrary\bin\Debug\net6.0\PersonLibrary.deps.json
+C:\Users\Admin\Desktop\7\PersonLibrary\bin\Debug\net6.0\PersonLibrary.dll
+C:\Users\Admin\Desktop\7\PersonLibrary\bin\Debug\net6.0\PersonLibrary.pdb
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\PersonLibrary.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\PersonLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\PersonLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\PersonLibrary.AssemblyInfo.cs
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\PersonLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\PersonLibrary.dll
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\refint\PersonLibrary.dll
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\PersonLibrary.pdb
+C:\Users\Admin\Desktop\7\PersonLibrary\obj\Debug\net6.0\ref\PersonLibrary.dll

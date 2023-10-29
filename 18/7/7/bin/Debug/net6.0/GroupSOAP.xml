@@ -1,0 +1,154 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/clr/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <SOAP-ENV:Body>
+    <a1:ArrayList id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.Collections/System.Private.CoreLib%2C%20Version%3D6.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D7cec85d7bea7798e">
+      <_items href="#ref-2" />
+      <_size>11</_size>
+      <_version>13</_version>
+    </a1:ArrayList>
+    <SOAP-ENC:Array id="ref-2" SOAP-ENC:arrayType="xsd:anyType[16]">
+      <item href="#ref-3" />
+      <item href="#ref-4" />
+      <item href="#ref-5" />
+      <item href="#ref-6" />
+      <item href="#ref-7" />
+      <item href="#ref-8" />
+      <item href="#ref-9" />
+      <item href="#ref-10" />
+      <item href="#ref-11" />
+      <item href="#ref-12" />
+      <item href="#ref-13" />
+    </SOAP-ENC:Array>
+    <a2:Student id="ref-3" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>11.6</average>
+      <number_of_group>1</number_of_group>
+      <name id="ref-14">Irina</name>
+      <surname id="ref-15">Konovalova</surname>
+      <age>27</age>
+      <phone>99321113</phone>
+      <Person_x002B_name href="#ref-14" />
+      <Person_x002B_surname href="#ref-15" />
+      <Person_x002B_age>27</Person_x002B_age>
+      <Person_x002B_phone>99321113</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-4" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>10.6</average>
+      <number_of_group>2</number_of_group>
+      <name id="ref-16">Maksym</name>
+      <surname id="ref-17">Cheban</surname>
+      <age>19</age>
+      <phone>99526072</phone>
+      <Person_x002B_name href="#ref-16" />
+      <Person_x002B_surname href="#ref-17" />
+      <Person_x002B_age>19</Person_x002B_age>
+      <Person_x002B_phone>99526072</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-5" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>11</average>
+      <number_of_group>2</number_of_group>
+      <name id="ref-18">Mikhail</name>
+      <surname id="ref-19">Zorin</surname>
+      <age>29</age>
+      <phone>50112345</phone>
+      <Person_x002B_name href="#ref-18" />
+      <Person_x002B_surname href="#ref-19" />
+      <Person_x002B_age>29</Person_x002B_age>
+      <Person_x002B_phone>50112345</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-6" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>11.5</average>
+      <number_of_group>1</number_of_group>
+      <name id="ref-20">Anton</name>
+      <surname id="ref-21">Avramenko</surname>
+      <age>20</age>
+      <phone>98112419</phone>
+      <Person_x002B_name href="#ref-20" />
+      <Person_x002B_surname href="#ref-21" />
+      <Person_x002B_age>20</Person_x002B_age>
+      <Person_x002B_phone>98112419</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-7" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>11.6</average>
+      <number_of_group>3</number_of_group>
+      <name id="ref-22">Viktor</name>
+      <surname id="ref-23">Tochenov</surname>
+      <age>20</age>
+      <phone>99523135</phone>
+      <Person_x002B_name href="#ref-22" />
+      <Person_x002B_surname href="#ref-23" />
+      <Person_x002B_age>20</Person_x002B_age>
+      <Person_x002B_phone>99523135</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-8" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>10.699999999999999</average>
+      <number_of_group>1</number_of_group>
+      <name id="ref-24">Denis</name>
+      <surname id="ref-25">Usov</surname>
+      <age>30</age>
+      <phone>99178214</phone>
+      <Person_x002B_name href="#ref-24" />
+      <Person_x002B_surname href="#ref-25" />
+      <Person_x002B_age>30</Person_x002B_age>
+      <Person_x002B_phone>99178214</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-9" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>10.4</average>
+      <number_of_group>2</number_of_group>
+      <name id="ref-26">Nikita</name>
+      <surname id="ref-27">Mynzat</surname>
+      <age>18</age>
+      <phone>99312456</phone>
+      <Person_x002B_name href="#ref-26" />
+      <Person_x002B_surname href="#ref-27" />
+      <Person_x002B_age>18</Person_x002B_age>
+      <Person_x002B_phone>99312456</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-10" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>12</average>
+      <number_of_group>1</number_of_group>
+      <name id="ref-28">Elena</name>
+      <surname id="ref-29">Artemyeva</surname>
+      <age>26</age>
+      <phone>99786612</phone>
+      <Person_x002B_name href="#ref-28" />
+      <Person_x002B_surname href="#ref-29" />
+      <Person_x002B_age>26</Person_x002B_age>
+      <Person_x002B_phone>99786612</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-11" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>10.300000000000001</average>
+      <number_of_group>2</number_of_group>
+      <name id="ref-30">Sergiy</name>
+      <surname id="ref-31">Menyailo</surname>
+      <age>29</age>
+      <phone>99445273</phone>
+      <Person_x002B_name href="#ref-30" />
+      <Person_x002B_surname href="#ref-31" />
+      <Person_x002B_age>29</Person_x002B_age>
+      <Person_x002B_phone>99445273</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-12" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>8.8000000000000007</average>
+      <number_of_group>1</number_of_group>
+      <name id="ref-32">Thomas</name>
+      <surname id="ref-33">Morgan</surname>
+      <age>37</age>
+      <phone>233134</phone>
+      <Person_x002B_name href="#ref-32" />
+      <Person_x002B_surname href="#ref-33" />
+      <Person_x002B_age>37</Person_x002B_age>
+      <Person_x002B_phone>233134</Person_x002B_phone>
+    </a2:Student>
+    <a2:Student id="ref-13" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/StudentLibrary/StudentLibrary%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <average>11.5</average>
+      <number_of_group>3</number_of_group>
+      <name id="ref-34">Soup</name>
+      <surname id="ref-35">McTavish</surname>
+      <age>35</age>
+      <phone>6722342</phone>
+      <Person_x002B_name href="#ref-34" />
+      <Person_x002B_surname href="#ref-35" />
+      <Person_x002B_age>35</Person_x002B_age>
+      <Person_x002B_phone>6722342</Person_x002B_phone>
+    </a2:Student>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
