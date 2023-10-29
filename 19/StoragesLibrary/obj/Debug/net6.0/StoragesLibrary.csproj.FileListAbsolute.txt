@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\19\StoragesLibrary\bin\Debug\net6.0\StoragesLibrary.deps.json
+C:\Users\Admin\Desktop\19\StoragesLibrary\bin\Debug\net6.0\StoragesLibrary.dll
+C:\Users\Admin\Desktop\19\StoragesLibrary\bin\Debug\net6.0\StoragesLibrary.pdb
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\StoragesLibrary.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\StoragesLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\StoragesLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\StoragesLibrary.AssemblyInfo.cs
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\StoragesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\StoragesLibrary.dll
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\refint\StoragesLibrary.dll
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\StoragesLibrary.pdb
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\ref\StoragesLibrary.dll
+C:\Users\Admin\Desktop\19\StoragesLibrary\bin\Debug\net6.0\LogLibrary.dll
+C:\Users\Admin\Desktop\19\StoragesLibrary\bin\Debug\net6.0\LogLibrary.pdb
+C:\Users\Admin\Desktop\19\StoragesLibrary\obj\Debug\net6.0\StoragesLibrary.csproj.CopyComplete

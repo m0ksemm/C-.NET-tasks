@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "PriceListLibrary/1.0.0": {
+        "dependencies": {
+          "LogLibrary": "1.0.0",
+          "SerializeLibrary": "1.0.0",
+          "StoragesLibrary": "1.0.0"
+        },
+        "runtime": {
+          "PriceListLibrary.dll": {}
+        }
+      },
+      "LogLibrary/1.0.0": {
+        "runtime": {
+          "LogLibrary.dll": {}
+        }
+      },
+      "SerializeLibrary/1.0.0": {
+        "dependencies": {
+          "StoragesLibrary": "1.0.0"
+        },
+        "runtime": {
+          "SerializeLibrary.dll": {}
+        }
+      },
+      "StoragesLibrary/1.0.0": {
+        "dependencies": {
+          "LogLibrary": "1.0.0"
+        },
+        "runtime": {
+          "StoragesLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PriceListLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LogLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SerializeLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StoragesLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

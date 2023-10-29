@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "StoragesLibrary/1.0.0": {
+        "dependencies": {
+          "LogLibrary": "1.0.0"
+        },
+        "runtime": {
+          "StoragesLibrary.dll": {}
+        }
+      },
+      "LogLibrary/1.0.0": {
+        "runtime": {
+          "LogLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StoragesLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LogLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

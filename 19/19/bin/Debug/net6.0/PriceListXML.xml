@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Storage xsi:type="Flash">
+    <Manufacturer>Kingston</Manufacturer>
+    <Model>K4</Model>
+    <Name>Kingston K4</Name>
+    <Capacity>312</Capacity>
+    <Count>312</Count>
+    <SpeedUSB>100</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>Samsung</Manufacturer>
+    <Model>S12</Model>
+    <Name>Samsung S12</Name>
+    <Capacity>78</Capacity>
+    <Count>78</Count>
+    <SpeedUSB>150</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>Motorola</Manufacturer>
+    <Model>m1980</Model>
+    <Name>Motorola m1980</Name>
+    <Capacity>3</Capacity>
+    <Count>3</Count>
+    <SpeedUSB>40</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>LG</Manufacturer>
+    <Model>F15</Model>
+    <Name>LG F15</Name>
+    <Capacity>426</Capacity>
+    <Count>426</Count>
+    <SpeedUSB>100</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>Toshiba</Manufacturer>
+    <Model>T50</Model>
+    <Name>Tishiba T50</Name>
+    <Capacity>15</Capacity>
+    <Count>15</Count>
+    <SpeedUSB>110</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>Kingston</Manufacturer>
+    <Model>H200</Model>
+    <Name>Kingston H200</Name>
+    <Capacity>118</Capacity>
+    <Count>118</Count>
+    <SpeedUSB>150</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>Asus</Manufacturer>
+    <Model>A89</Model>
+    <Name>Asus A89</Name>
+    <Capacity>315</Capacity>
+    <Count>315</Count>
+    <SpeedUSB>150</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>Nokia</Manufacturer>
+    <Model>Save4</Model>
+    <Name>Nokia Save4</Name>
+    <Capacity>14</Capacity>
+    <Count>14</Count>
+    <SpeedUSB>30</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>Sony</Manufacturer>
+    <Model>S128</Model>
+    <Name>Sony S128</Name>
+    <Capacity>712</Capacity>
+    <Count>712</Count>
+    <SpeedUSB>100</SpeedUSB>
+  </Storage>
+  <Storage xsi:type="Flash">
+    <Manufacturer>HP</Manufacturer>
+    <Model>HS7</Model>
+    <Name>HP HS7</Name>
+    <Capacity>14</Capacity>
+    <Count>14</Count>
+    <SpeedUSB>130</SpeedUSB>
+  </Storage>
+</ArrayOfStorage>

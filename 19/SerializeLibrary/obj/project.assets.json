@@ -1,0 +1,109 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "LogLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LogLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LogLibrary.dll": {}
+        }
+      },
+      "StoragesLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LogLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StoragesLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoragesLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LogLibrary/1.0.0": {
+      "type": "project",
+      "path": "../LogLibrary/LogLibrary.csproj",
+      "msbuildProject": "../LogLibrary/LogLibrary.csproj"
+    },
+    "StoragesLibrary/1.0.0": {
+      "type": "project",
+      "path": "../StoragesLibrary/StoragesLibrary.csproj",
+      "msbuildProject": "../StoragesLibrary/StoragesLibrary.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "StoragesLibrary >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\19\\SerializeLibrary\\SerializeLibrary.csproj",
+      "projectName": "SerializeLibrary",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\19\\SerializeLibrary\\SerializeLibrary.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\19\\SerializeLibrary\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\Admin\\Desktop\\19\\StoragesLibrary\\StoragesLibrary.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\19\\StoragesLibrary\\StoragesLibrary.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

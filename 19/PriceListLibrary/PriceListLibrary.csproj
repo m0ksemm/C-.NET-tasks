@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LogLibrary\LogLibrary.csproj" />
+    <ProjectReference Include="..\SerializeLibrary\SerializeLibrary.csproj" />
+    <ProjectReference Include="..\StoragesLibrary\StoragesLibrary.csproj" />
+  </ItemGroup>
+
+</Project>

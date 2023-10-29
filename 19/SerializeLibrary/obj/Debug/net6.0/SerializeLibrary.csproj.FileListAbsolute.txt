@@ -1,0 +1,17 @@
+C:\Users\Admin\Desktop\19\SerializeLibrary\bin\Debug\net6.0\SerializeLibrary.deps.json
+C:\Users\Admin\Desktop\19\SerializeLibrary\bin\Debug\net6.0\SerializeLibrary.dll
+C:\Users\Admin\Desktop\19\SerializeLibrary\bin\Debug\net6.0\SerializeLibrary.pdb
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\SerializeLibrary.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\SerializeLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\SerializeLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\SerializeLibrary.AssemblyInfo.cs
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\SerializeLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\SerializeLibrary.dll
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\refint\SerializeLibrary.dll
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\SerializeLibrary.pdb
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\ref\SerializeLibrary.dll
+C:\Users\Admin\Desktop\19\SerializeLibrary\bin\Debug\net6.0\LogLibrary.dll
+C:\Users\Admin\Desktop\19\SerializeLibrary\bin\Debug\net6.0\StoragesLibrary.dll
+C:\Users\Admin\Desktop\19\SerializeLibrary\bin\Debug\net6.0\StoragesLibrary.pdb
+C:\Users\Admin\Desktop\19\SerializeLibrary\bin\Debug\net6.0\LogLibrary.pdb
+C:\Users\Admin\Desktop\19\SerializeLibrary\obj\Debug\net6.0\SerializeLibrary.csproj.CopyComplete

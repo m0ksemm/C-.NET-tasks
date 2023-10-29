@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>_19</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LogLibrary\LogLibrary.csproj" />
+    <ProjectReference Include="..\PriceListLibrary\PriceListLibrary.csproj" />
+    <ProjectReference Include="..\SerializeLibrary\SerializeLibrary.csproj" />
+    <ProjectReference Include="..\StoragesLibrary\StoragesLibrary.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+C:\Users\Admin\Desktop\19\LogLibrary\bin\Debug\net6.0\LogLibrary.deps.json
+C:\Users\Admin\Desktop\19\LogLibrary\bin\Debug\net6.0\LogLibrary.dll
+C:\Users\Admin\Desktop\19\LogLibrary\bin\Debug\net6.0\LogLibrary.pdb
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\LogLibrary.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\LogLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\LogLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\LogLibrary.AssemblyInfo.cs
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\LogLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\LogLibrary.dll
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\refint\LogLibrary.dll
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\LogLibrary.pdb
+C:\Users\Admin\Desktop\19\LogLibrary\obj\Debug\net6.0\ref\LogLibrary.dll
