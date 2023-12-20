@@ -16,7 +16,7 @@ namespace RGR
         {
             Console.WriteLine("Inventarization of the warehouse\n ");
             Console.WriteLine("Choose the table: ");
-            string[] tables = new string[6] { "Product", "Category", "City", "Manufacturer", "Warehouse", "Warehouse_product" };
+            string[] tables = new string[6] { "Product", "Category", "City", "Manufacturer", "Warehouse", "Warehouse Product" };
 
             for (int i = 0; i < 6; i++)
             {
@@ -55,6 +55,8 @@ namespace RGR
         #region Products
         public void ShowAllProducts(List<Prod> Products)
         {
+            Console.WriteLine("{0,3}|{1,25}|{2,10}|{3,10}|{4,10}|{5,7}|{6,15}|{7,15}", "Id", "Name", "Vend.code", "Ser.num", "Deliv.date", "Count", "Manufacturer", "Category");
+            Console.WriteLine("------------------------------------------------------------------------------------------------------");
             foreach (Prod p in Products)
             {
                 Console.WriteLine("{0,3}|{1,25}|{2,10}|{3,10}|{4,10}|{5,7}|{6,15}|{7,15}", p.Id, p.Name, p.Vendor_code, p.Serial_number, Convert.ToString(p.Delivery_date), p.Quantity, p.Manufacturer, p.Category);
@@ -87,21 +89,39 @@ namespace RGR
             //
             return prod;
         }
-        public void ProductSearch()
+        public void ProductSearchMenu()
         {
-            Console.WriteLine("  SEARCH");
-
-            Console.WriteLine("  Press any key to continue\n");
-            Console.ReadKey();
+            Console.WriteLine("  Choose the column as the criteria of the search:");
+            Console.WriteLine("  1. Name");
+            Console.WriteLine("  2. Vendor code");
+            Console.WriteLine("  3. Serial number");
+            Console.WriteLine("  4. Quantity");
         }
-        
+        public string ProductNameSearch()
+        {
+            Console.WriteLine("  Enter the name (or its part)");
+            string str = Console.ReadLine();
+            return str;
+        }
+        public string ProductSearchVendorCode()
+        {
+            Console.WriteLine("  Enter the vendor code (or its part)");
+            string str = Console.ReadLine();
+            return str;
+        }
+        public string ProductSearchSerialNumber()
+        {
+            Console.WriteLine("  Enter the serial number (or its part)");
+            string str = Console.ReadLine();
+            return str;
+        }
+
         #endregion
-        /// ////////////////////////////////////////////////////////// 
-        /// ///////////////////////////////////////////////////////////////
-
-
+        #region Manufacturers
         public void ShowAllManufacturers(List<Manuf> manufs)
         {
+            Console.WriteLine("{0,3}|{1,15}", "Id", "Name");
+            Console.WriteLine("---------------------");
             foreach (Manuf m in manufs)
             {
                 Console.WriteLine("{0,3}|{1,15}", m.Id, m.Name);
@@ -116,18 +136,18 @@ namespace RGR
            
             return man;
         }
-
-        public void ManufacturerSearch()
+        public string ManufacturerSearch()
         {
-            Console.WriteLine("  SEARCH");
-
-            Console.WriteLine("  Press any key to continue\n");
-            Console.ReadKey();
+            Console.WriteLine("  Enter the name of manufacturer (or its part)");
+            string str = Console.ReadLine();
+            return str;
         }
-
-        ////////////
+        #endregion
+        #region Categories 
         public void ShowAllCategories(List<Categ> cats)
         {
+            Console.WriteLine("{0,3}|{1,15}", "Id", "Name");
+            Console.WriteLine("---------------------");
             foreach (Categ c in cats)
             {
                 Console.WriteLine("{0,3}|{1,15}", c.Id, c.Name);
@@ -143,19 +163,18 @@ namespace RGR
             return cat;
         }
 
-        public void CategorySearch()
+        public string CategorySearch()
         {
-            Console.WriteLine("  SEARCH");
-
-            Console.WriteLine("  Press any key to continue\n");
-            Console.ReadKey();
+            Console.WriteLine("  Enter the name of category (or its part)");
+            string str = Console.ReadLine();
+            return str;
         }
-
-
-
-        ////////////
+        #endregion
+        #region Cities
         public void ShowAllCities(List<Cities> cts)
         {
+            Console.WriteLine("{0,3}|{1,15}", "Id", "Name");
+            Console.WriteLine("---------------------");
             foreach (Cities c in cts)
             {
                 Console.WriteLine("{0,3}|{1,15}", c.Id, c.Name);
@@ -170,24 +189,24 @@ namespace RGR
 
             return cts;
         }
-
-        public void CitySearch()
+        public string CitySearch()
         {
-            Console.WriteLine("  SEARCH");
-
-            Console.WriteLine("  Press any key to continue\n");
-            Console.ReadKey();
+            Console.WriteLine("  Enter the name of city (or its part)");
+            string str = Console.ReadLine();
+            return str;
         }
+        #endregion
 
 
 
 
-
-        // // // // // // 
+        
 
 
         public void ShowAllWarehouses(List<Warehouse> warehouses)
         {
+            Console.WriteLine("{0,3}|{1,15}|{2,15}|{3,5}|{4,25}", "Id", "Name", "City", "Sq.ar", "Addres");
+            Console.WriteLine("------------------------------------------------------------------");
             foreach (Warehouse w in warehouses)
             {
                 Console.WriteLine("{0,3}|{1,15}|{2,15}|{3,5}|{4,25}", w.Id, w.Name, w.City, w.Square_area,  w.Address);
@@ -212,12 +231,66 @@ namespace RGR
 
             return w;
         }
-        public void WarehouseSearch()
+        public void WarehouseSearchMenu()
         {
-            Console.WriteLine("  SEARCH");
+            Console.WriteLine("  Choose the column as the criteria of the search:");
+            Console.WriteLine("  1. Name");
+            Console.WriteLine("  2. Square area");
+            Console.WriteLine("  3. Address");
+        }
+        public string WarehouseNameSearch()
+        {
+            Console.WriteLine("  Enter the name of warehouse (or its part)");
+            string name = Console.ReadLine();
+            return name;
+        }
+        public string WarehouseAddressSearch()
+        {
+            Console.WriteLine("  Enter the address of warehouse (or its part)");
+            string add = Console.ReadLine();
+            return add;
+        }
 
-            Console.WriteLine("  Press any key to continue\n");
-            Console.ReadKey();
+
+        /// /// /// /// /// 
+        public void ShowAllWarehousesProducts(List<WarehouseProduct> wp)
+        {
+            Console.WriteLine("{0,3}|{1,15}|{2,25}", "Id", "Warehouse", "Product");
+            Console.WriteLine("---------------------------------------------");
+            foreach (WarehouseProduct w in wp)
+            {
+                Console.WriteLine("{0,3}|{1,15}|{2,25}", w.Id, w.Warehouse, w.Product);
+            }
+        }
+        public WarehouseProduct WarehouseProductInput()
+        {
+            WarehouseProduct w = new WarehouseProduct();
+            Console.WriteLine("  Enter the data about warehouse and corresponding product: ");
+            Console.Write("  Warehouse:  ");
+            w.Warehouse = Console.ReadLine();
+            //
+            Console.Write("  Product:  ");
+            w.Product = Console.ReadLine();
+
+            return w;
+        }
+        public void WarehouseProductSearchMenu()
+        {
+            Console.WriteLine("  Choose the column as the criteria of the search:");
+            Console.WriteLine("  1. Warehouse");
+            Console.WriteLine("  2. Product");
+        }
+        public string WarehouseProductSearchW()
+        {
+            Console.WriteLine("  Enter the warehouse name (or its part)");
+            string str = Console.ReadLine();
+            return str;
+        }
+        public string WarehouseProductSearchP()
+        {
+            Console.WriteLine("  Enter the product name (or its part)");
+            string str = Console.ReadLine();
+            return str;
         }
     }
 }

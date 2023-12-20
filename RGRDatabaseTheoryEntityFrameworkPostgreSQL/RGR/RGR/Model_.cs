@@ -5,6 +5,9 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Npgsql;
 using RGR.DataModels;
 
 namespace RGR
@@ -15,7 +18,9 @@ namespace RGR
         public DbSet<Manuf> Manufacturer { get; set; }
         public DbSet<Categ> Category { get; set; }
         public DbSet<Prod> Product { get; set; }
+        public DbSet<WarehouseProduct> WarehousesProducts { get; set; }
 
+        public DbSet<Warehouse> Warehouses { get; set; }
         //public DbSet<Post> Posts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -35,7 +40,6 @@ namespace RGR
         #region ProductMethods
         public List<Prod> GetAllProducts()
         {
-
             var prod = InventoryContext.Database.SqlQuery<Prod>($"Select \"Product\".\"Id\", \"Product\".\"Name\" as Name, \"Product\".\"Vendor_code\" as Vendor_code, \"Product\".\"Serial_number\" as Serial_number, \"Product\".\"Delivery_date\" as Delivery_date, \"Product\".\"Quantity\" as Quantity,\"Manufacturer\".\"Name\" as Manufacturer, \"Category\".\"Name\" as Category\r\nfrom \"Product\", \"Manufacturer\", \"Category\" where  \"Product\".\"Manufacturer_Id\" = \"Manufacturer\".\"Id\" and \"Product\".\"Category_Id\" = \"Category\".\"Id\" ORDER BY \"Id\" ASC ");
             
             return prod.ToList();
@@ -77,7 +81,6 @@ namespace RGR
             int numberOfRowInserted = InventoryContext.Database.ExecuteSqlRaw(sqlQuery);
             return 1;
         }
-
         public int DeleteProduct(int id)
         {
             List<int> ids = new List<int>();
@@ -103,8 +106,6 @@ namespace RGR
                 return 2;
             }
         }
-
-
         public int EditProduct(Prod prod, int id)
         {
             int cat_id = -1;
@@ -143,6 +144,79 @@ namespace RGR
             }
             else return 0;
         }
+        public List<Prod> ProductSearchName(string key)
+        {
+            var pr = InventoryContext.Product.FromSqlRaw(
+        @"SELECT ""Product"".""Id"", 
+          ""Product"".""Name"" AS Name, 
+          ""Product"".""Vendor_code"" AS Vendor_code, 
+          ""Product"".""Serial_number"" AS Serial_number, 
+          ""Product"".""Delivery_date"" AS Delivery_date, 
+          ""Product"".""Quantity"" AS Quantity, 
+          ""Manufacturer"".""Name"" AS Manufacturer, 
+          ""Category"".""Name"" AS Category 
+       FROM ""Product"", ""Manufacturer"", ""Category"" 
+       WHERE ""Product"".""Manufacturer_Id"" = ""Manufacturer"".""Id"" 
+          AND ""Product"".""Category_Id"" = ""Category"".""Id"" 
+          AND ""Product"".""Name"" LIKE '%'||{0}||'%'", key);
+
+            return pr.ToList();
+        }
+        public List<Prod> ProductSearchVendorCode(string key)
+        {
+            var pr = InventoryContext.Product.FromSqlRaw(
+        @"SELECT ""Product"".""Id"", 
+          ""Product"".""Name"" AS Name, 
+          ""Product"".""Vendor_code"" AS Vendor_code, 
+          ""Product"".""Serial_number"" AS Serial_number, 
+          ""Product"".""Delivery_date"" AS Delivery_date, 
+          ""Product"".""Quantity"" AS Quantity, 
+          ""Manufacturer"".""Name"" AS Manufacturer, 
+          ""Category"".""Name"" AS Category 
+       FROM ""Product"", ""Manufacturer"", ""Category"" 
+       WHERE ""Product"".""Manufacturer_Id"" = ""Manufacturer"".""Id"" 
+          AND ""Product"".""Category_Id"" = ""Category"".""Id"" 
+          AND ""Product"".""Vendor_code"" LIKE '%'||{0}||'%'", key);
+
+            return pr.ToList();
+        }
+        public List<Prod> ProductSearchSerialNumber(string key)
+        {
+            var pr = InventoryContext.Product.FromSqlRaw(
+        @"SELECT ""Product"".""Id"", 
+          ""Product"".""Name"" AS Name, 
+          ""Product"".""Vendor_code"" AS Vendor_code, 
+          ""Product"".""Serial_number"" AS Serial_number, 
+          ""Product"".""Delivery_date"" AS Delivery_date, 
+          ""Product"".""Quantity"" AS Quantity, 
+          ""Manufacturer"".""Name"" AS Manufacturer, 
+          ""Category"".""Name"" AS Category 
+       FROM ""Product"", ""Manufacturer"", ""Category"" 
+       WHERE ""Product"".""Manufacturer_Id"" = ""Manufacturer"".""Id"" 
+          AND ""Product"".""Category_Id"" = ""Category"".""Id"" 
+          AND ""Product"".""Serial_number"" LIKE '%'||{0}||'%'", key);
+
+            return pr.ToList();
+        }
+        public List<Prod> ProductSearchQuantity(int min, int max)
+        {
+            var pr = InventoryContext.Product.FromSqlRaw(
+        @"SELECT ""Product"".""Id"", 
+          ""Product"".""Name"" AS Name, 
+          ""Product"".""Vendor_code"" AS Vendor_code, 
+          ""Product"".""Serial_number"" AS Serial_number, 
+          ""Product"".""Delivery_date"" AS Delivery_date, 
+          ""Product"".""Quantity"" AS Quantity, 
+          ""Manufacturer"".""Name"" AS Manufacturer, 
+          ""Category"".""Name"" AS Category 
+       FROM ""Product"", ""Manufacturer"", ""Category"" 
+       WHERE ""Product"".""Manufacturer_Id"" = ""Manufacturer"".""Id"" 
+          AND ""Product"".""Category_Id"" = ""Category"".""Id"" 
+          AND ""Product"".""Quantity"" <= {0} AND ""Product"".""Quantity"" >= {1}", max, min);
+
+            return pr.ToList();
+        }
+
         #endregion
 
         #region ManufacturerMethods
@@ -214,6 +288,15 @@ namespace RGR
             {
                 return 2;
             }
+        }
+        public List<Manuf> ManufacturerSearch(string key)
+        {
+            var cats = InventoryContext.Manufacturer.FromSqlRaw(
+            @"SELECT * 
+            FROM ""Manufacturer"" 
+            WHERE ""Manufacturer"".""Name"" LIKE '%'||{0}||'%'", key);
+
+            return cats.ToList();
         }
         #endregion
 
@@ -288,6 +371,15 @@ namespace RGR
                 return 2;
             }
         }
+        public List<Categ> CategorySearch(string key)
+        {
+            var cats = InventoryContext.Category.FromSqlRaw(
+            @"SELECT * 
+            FROM ""Category"" 
+            WHERE ""Category"".""Name"" LIKE '%'||{0}||'%'", key);
+
+            return cats.ToList();
+        }
         #endregion
 
         #region CityMethods
@@ -361,6 +453,15 @@ namespace RGR
                 return 2;
             }
         }
+        public List<Cities> CitiesSearch(string key)
+        {
+            var cats = InventoryContext.City.FromSqlRaw(
+            @"SELECT * 
+            FROM ""City"" 
+            WHERE ""City"".""Name"" LIKE '%'||{0}||'%'", key);
+
+            return cats.ToList();
+        }
         #endregion
 
         #region WarehouseMethods
@@ -375,7 +476,7 @@ namespace RGR
         {
             int city_id = -1;
 
-            var ct = InventoryContext.Database.SqlQuery<Cities>($"Select * from \"City\"");
+            var ct = InventoryContext.Database.SqlQuery<Cities>($"Select * from \"City\" ORDER BY \"Id\" ASC ");
             foreach (Cities c in ct)
             {
                 if (c.Name == warehouse.City)
@@ -426,8 +527,6 @@ namespace RGR
                 return 2;
             }
         }
-
-
         public int EditWarehouse(Warehouse warehouse, int id)
         {
             int city_id = -1;
@@ -458,49 +557,88 @@ namespace RGR
             }
             else return 0;
         }
+
+        public List<Warehouse> WarehouseSearchName(string key)
+        {
+            var cats = InventoryContext.Warehouses.FromSqlRaw(
+                @"SELECT ""Warehouse"".""Id"",
+                ""Warehouse"".""Name"" as Name, ""City"".""Name"" as City, 
+                ""Warehouse"".""Square_area"" as Square_area, 
+                ""Warehouse"".""Address"" as Address FROM ""Warehouse"", 
+                ""City"" WHERE  ""Warehouse"".""City_Id"" = ""City"".""Id""
+                AND ""Warehouse"".""Name"" LIKE '%'||{0}||'%'", key);
+
+            return cats.ToList();
+        }
+        public List<Warehouse> WarehouseSearchAddress(string key)
+        {
+            var cats = InventoryContext.Warehouses.FromSqlRaw(
+                @"SELECT ""Warehouse"".""Id"",
+                ""Warehouse"".""Name"" as Name, ""City"".""Name"" as City, 
+                ""Warehouse"".""Square_area"" as Square_area, 
+                ""Warehouse"".""Address"" as Address FROM ""Warehouse"", 
+                ""City"" WHERE  ""Warehouse"".""City_Id"" = ""City"".""Id""
+                AND ""Warehouse"".""Address"" LIKE '%'||{0}||'%'", key);
+
+            return cats.ToList();
+        }
+
+        public List<Warehouse>  WarehouseSearchQuantity(double min, double max)
+        {
+            var cats = InventoryContext.Warehouses.FromSqlRaw(
+                @"SELECT ""Warehouse"".""Id"",
+                ""Warehouse"".""Name"" as Name, ""City"".""Name"" as City, 
+                ""Warehouse"".""Square_area"" as Square_area, 
+                ""Warehouse"".""Address"" as Address FROM ""Warehouse"", 
+                ""City"" WHERE  ""Warehouse"".""City_Id"" = ""City"".""Id""
+                AND ""Warehouse"".""Square_area"" <= {0} 
+                AND ""Warehouse"".""Square_area"" >= {0}", min, max);
+
+            return cats.ToList();
+        }
         #endregion
 
         #region WarehouseProductMethods
-        public List<Prod> GetAllWarehousesProducts()
+        public List<WarehouseProduct> GetAllWarehousesProducts()
         {
 
-            var prod = InventoryContext.Database.SqlQuery<Prod>($"Select \"Product\".\"Id\", \"Product\".\"Name\" as Name, \"Product\".\"Vendor_code\" as Vendor_code, \"Product\".\"Serial_number\" as Serial_number, \"Product\".\"Delivery_date\" as Delivery_date, \"Product\".\"Quantity\" as Quantity,\"Manufacturer\".\"Name\" as Manufacturer, \"Category\".\"Name\" as Category\r\nfrom \"Product\", \"Manufacturer\", \"Category\" where  \"Product\".\"Manufacturer_Id\" = \"Manufacturer\".\"Id\" and \"Product\".\"Category_Id\" = \"Category\".\"Id\" ORDER BY \"Id\" ASC ");
+            var prod = InventoryContext.Database.SqlQuery<WarehouseProduct>($"Select \"Warehouses_Products\".\"Id\", \"Warehouse\".\"Name\" as Warehouse, \"Product\".\"Name\" as Product from \"Warehouse\", \"Product\", \"Warehouses_Products\" where \"Warehouses_Products\".\"Warehouse_Id\"=\"Warehouse\".\"Id\" and \"Warehouses_Products\".\"Product_Id\"=\"Product\".\"Id\" ORDER BY \"Id\" ASC ");
 
             return prod.ToList();
         }
-        public int InputWarehouseProduct(Prod prod)
+        public int InputWarehouseProduct(WarehouseProduct prod)
         {
-            int cat_id = -1;
-            int man_id = -1;
-
-            var cat = InventoryContext.Database.SqlQuery<Categ>($"Select * from \"Category\"");
-            foreach (Categ c in cat)
+            int war_id = -1;
+            int prod_id = -1;
+            ///
+            var war = InventoryContext.Database.SqlQuery<Warehouse>($"Select \"Warehouse\".\"Id\", \"Warehouse\".\"Name\" as Name, \"City\".\"Name\" as City, \"Warehouse\".\"Square_area\" as Square_area, \"Warehouse\".\"Address\" as Address from \"Warehouse\", \"City\" \nwhere  \"Warehouse\".\"City_Id\" = \"City\".\"Id\" \nORDER BY \"Id\" ASC ");
+            foreach (Warehouse w in war)
             {
-                if (c.Name == prod.Category)
-                    cat_id = c.Id;
+                if (w.Name == prod.Warehouse)
+                    war_id = w.Id;
             }
-            var man = InventoryContext.Database.SqlQuery<Manuf>($"Select * from \"Manufacturer\"");
-            foreach (Manuf m in man)
+            var prd = InventoryContext.Database.SqlQuery<Prod>($"Select \"Product\".\"Id\", \"Product\".\"Name\" as Name, \"Product\".\"Vendor_code\" as Vendor_code, \"Product\".\"Serial_number\" as Serial_number, \"Product\".\"Delivery_date\" as Delivery_date, \"Product\".\"Quantity\" as Quantity,\"Manufacturer\".\"Name\" as Manufacturer, \"Category\".\"Name\" as Category\r\nfrom \"Product\", \"Manufacturer\", \"Category\" where  \"Product\".\"Manufacturer_Id\" = \"Manufacturer\".\"Id\" and \"Product\".\"Category_Id\" = \"Category\".\"Id\" ORDER BY \"Id\" ASC");
+            foreach (Prod p in prd)
             {
-                if (m.Name == prod.Manufacturer)
-                    man_id = m.Id;
+                if (p.Name == prod.Product)
+                    prod_id = p.Id;
 
             }
-            if (cat_id == -1)
-                return 3;
-            if (man_id == -1)
+            if (war_id == -1)
                 return 2;
+            if (prod_id == -1)
+                return 3;
 
             List<int> ids = new List<int>();
-            var pr = InventoryContext.Database.SqlQuery<Prod>($"Select \"Product\".\"Id\", \"Product\".\"Name\" as Name, \"Product\".\"Vendor_code\" as Vendor_code, \"Product\".\"Serial_number\" as Serial_number, \"Product\".\"Delivery_date\" as Delivery_date, \"Product\".\"Quantity\" as Quantity,\"Manufacturer\".\"Name\" as Manufacturer, \"Category\".\"Name\" as Category\r\nfrom \"Product\", \"Manufacturer\", \"Category\" where  \"Product\".\"Manufacturer_Id\" = \"Manufacturer\".\"Id\" and \"Product\".\"Category_Id\" = \"Category\".\"Id\"");
-            foreach (Prod p in pr)
+            var wpr = InventoryContext.Database.SqlQuery<WarehouseProduct>($"Select \"Warehouses_Products\".\"Id\", \"Warehouse\".\"Name\" as Warehouse, \"Product\".\"Name\" as Product from \"Warehouse\", \"Product\", \"Warehouses_Products\" where \"Warehouses_Products\".\"Warehouse_Id\"=\"Warehouse\".\"Id\" and \"Warehouses_Products\".\"Product_Id\"=\"Product\".\"Id\" ORDER BY \"Id\" ASC");
+            foreach (WarehouseProduct wp in wpr)
             {
-                ids.Add(p.Id);
+                ids.Add(wp.Id);
             }
 
             int maxId = ids.Max(id => id) + 1;
 
-            var sqlQuery = $"INSERT INTO \"Product\" VALUES ('{maxId}', '{prod.Name}', '{prod.Vendor_code}','{prod.Serial_number}','{prod.Delivery_date}', {prod.Quantity}, {man_id}, {cat_id})";
+            var sqlQuery = $"INSERT INTO \"Warehouses_Products\" VALUES ('{maxId}', '{war_id}', '{prod_id}')";
 
             int numberOfRowInserted = InventoryContext.Database.ExecuteSqlRaw(sqlQuery);
             return 1;
@@ -509,8 +647,8 @@ namespace RGR
         public int DeleteWarehouseProduct(int id)
         {
             List<int> ids = new List<int>();
-            var pr = InventoryContext.Database.SqlQuery<Prod>($"Select \"Product\".\"Id\", \"Product\".\"Name\" as Name, \"Product\".\"Vendor_code\" as Vendor_code, \"Product\".\"Serial_number\" as Serial_number, \"Product\".\"Delivery_date\" as Delivery_date, \"Product\".\"Quantity\" as Quantity,\"Manufacturer\".\"Name\" as Manufacturer, \"Category\".\"Name\" as Category\r\nfrom \"Product\", \"Manufacturer\", \"Category\" where  \"Product\".\"Manufacturer_Id\" = \"Manufacturer\".\"Id\" and \"Product\".\"Category_Id\" = \"Category\".\"Id\"");
-            foreach (Prod p in pr)
+            var pr = InventoryContext.Database.SqlQuery<WarehouseProduct>($"Select \"Warehouses_Products\".\"Id\", \"Warehouse\".\"Name\" as Warehouse, \"Product\".\"Name\" as Product from \"Warehouse\", \"Product\", \"Warehouses_Products\" where \"Warehouses_Products\".\"Warehouse_Id\"=\"Warehouse\".\"Id\" and \"Warehouses_Products\".\"Product_Id\"=\"Product\".\"Id\" ORDER BY \"Id\" ASC");
+            foreach (WarehouseProduct p in pr)
             {
                 ids.Add(p.Id);
             }
@@ -519,7 +657,7 @@ namespace RGR
             {
                 if (ids.Contains(id))
                 {
-                    var sqlQuery = $"DELETE from \"Product\" WHERE \"Id\" = {id};";
+                    var sqlQuery = $"DELETE from \"Warehouses_Products\" WHERE \"Id\" = {id};";
                     int numberOfRowInserted = InventoryContext.Database.ExecuteSqlRaw(sqlQuery);
 
                     return 1;
@@ -533,43 +671,58 @@ namespace RGR
         }
 
 
-        public int EditWarehouseProduct(Prod prod, int id)
+        public int EditWarehouseProduct(WarehouseProduct prod, int id)
         {
-            int cat_id = -1;
-            int man_id = -1;
-
-            var cat = InventoryContext.Database.SqlQuery<Categ>($"Select * from \"Category\"");
-            foreach (Categ c in cat)
+            int war_id = -1;
+            int prod_id = -1;
+            ///
+            var war = InventoryContext.Database.SqlQuery<Warehouse>($"Select \"Warehouse\".\"Id\", \"Warehouse\".\"Name\" as Name, \"City\".\"Name\" as City, \"Warehouse\".\"Square_area\" as Square_area, \"Warehouse\".\"Address\" as Address from \"Warehouse\", \"City\" \nwhere  \"Warehouse\".\"City_Id\" = \"City\".\"Id\" \nORDER BY \"Id\" ASC ");
+            foreach (Warehouse w in war)
             {
-                if (c.Name == prod.Category)
-                    cat_id = c.Id;
+                if (w.Name == prod.Warehouse)
+                    war_id = w.Id;
             }
-            var man = InventoryContext.Database.SqlQuery<Manuf>($"Select * from \"Manufacturer\"");
-            foreach (Manuf m in man)
+            var prd = InventoryContext.Database.SqlQuery<Prod>($"Select \"Product\".\"Id\", \"Product\".\"Name\" as Name, \"Product\".\"Vendor_code\" as Vendor_code, \"Product\".\"Serial_number\" as Serial_number, \"Product\".\"Delivery_date\" as Delivery_date, \"Product\".\"Quantity\" as Quantity,\"Manufacturer\".\"Name\" as Manufacturer, \"Category\".\"Name\" as Category\r\nfrom \"Product\", \"Manufacturer\", \"Category\" where  \"Product\".\"Manufacturer_Id\" = \"Manufacturer\".\"Id\" and \"Product\".\"Category_Id\" = \"Category\".\"Id\" ORDER BY \"Id\" ASC");
+            foreach (Prod p in prd)
             {
-                if (m.Name == prod.Manufacturer)
-                    man_id = m.Id;
+                if (p.Name == prod.Product)
+                    prod_id = p.Id;
 
             }
-            if (cat_id == -1)
-                return 3;
-            if (man_id == -1)
+            if (war_id == -1)
                 return 2;
+            if (prod_id == -1)
+                return 3;
+
             List<int> ids = new List<int>();
-            var pr = InventoryContext.Database.SqlQuery<Prod>($"Select \"Product\".\"Id\", \"Product\".\"Name\" as Name, \"Product\".\"Vendor_code\" as Vendor_code, \"Product\".\"Serial_number\" as Serial_number, \"Product\".\"Delivery_date\" as Delivery_date, \"Product\".\"Quantity\" as Quantity,\"Manufacturer\".\"Name\" as Manufacturer, \"Category\".\"Name\" as Category\r\nfrom \"Product\", \"Manufacturer\", \"Category\" where  \"Product\".\"Manufacturer_Id\" = \"Manufacturer\".\"Id\" and \"Product\".\"Category_Id\" = \"Category\".\"Id\"");
-            foreach (Prod p in pr)
+            var pr = InventoryContext.Database.SqlQuery<WarehouseProduct>($"Select \"Warehouses_Products\".\"Id\", \"Warehouse\".\"Name\" as Warehouse, \"Product\".\"Name\" as Product from \"Warehouse\", \"Product\", \"Warehouses_Products\" where \"Warehouses_Products\".\"Warehouse_Id\"=\"Warehouse\".\"Id\" and \"Warehouses_Products\".\"Product_Id\"=\"Product\".\"Id\" ORDER BY \"Id\" ASC");
+            foreach (WarehouseProduct p in pr)
             {
                 ids.Add(p.Id);
             }
 
             if (ids.Contains(id))
             {
-                var sqlQuery = $"UPDATE \"Product\" SET \"Name\"='{prod.Name}', \"Vendor_code\"='{prod.Vendor_code}', \"Serial_number\"='{prod.Serial_number}', \"Delivery_date\"='{prod.Delivery_date}', \"Quantity\"={prod.Quantity}, \r\n\"Manufacturer_Id\"={man_id}, \"Category_Id\"={cat_id} where \"Id\" = {id};";
+                var sqlQuery = $"UPDATE \"Warehouses_Products\" SET \"Warehouse_Id\"='{war_id}', \"Product_Id\"='{prod_id}' WHERE \"Id\" = {id};";
                 int numberOfRowInserted = InventoryContext.Database.ExecuteSqlRaw(sqlQuery);
 
                 return 1;
             }
             else return 0;
+        }
+        public List<WarehouseProduct> WarehouseProductSearchW(string key)
+        {
+            var cats = InventoryContext.WarehousesProducts.FromSqlRaw(
+                @"Select ""Warehouses_Products"".""Id"", ""Warehouse"".""Name"" as Warehouse, ""Product"".""Name"" as Product from ""Warehouse"", ""Product"", ""Warehouses_Products"" WHERE ""Warehouses_Products"".""Warehouse_Id""=""Warehouse"".""Id"" AND ""Warehouses_Products"".""Product_Id""=""Product"".""Id"" AND ""Warehouse"".""Name"" LIKE '%'||{0}||'%'", key);
+
+            return cats.ToList();
+        }
+        public List<WarehouseProduct> WarehouseProductSearchP(string key)
+        {
+            var cats = InventoryContext.WarehousesProducts.FromSqlRaw(
+                @"Select ""Warehouses_Products"".""Id"", ""Warehouse"".""Name"" as Warehouse, ""Product"".""Name"" as Product from ""Warehouse"", ""Product"", ""Warehouses_Products"" WHERE ""Warehouses_Products"".""Warehouse_Id""=""Warehouse"".""Id"" AND ""Warehouses_Products"".""Product_Id""=""Product"".""Id"" AND ""Product"".""Name"" LIKE '%'||{0}||'%'", key);
+
+            return cats.ToList();
         }
         #endregion
     }
