@@ -446,7 +446,6 @@ namespace RGR
                                 view.Done();
                             }
                         }
-                           
                         else view.ErrorMessage("You have entered wrong value! ");
                     }
                 }

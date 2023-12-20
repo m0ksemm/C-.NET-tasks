@@ -591,7 +591,7 @@ namespace RGR
                 ""Warehouse"".""Square_area"" as Square_area, 
                 ""Warehouse"".""Address"" as Address FROM ""Warehouse"", 
                 ""City"" WHERE  ""Warehouse"".""City_Id"" = ""City"".""Id""
-                AND ""Warehouse"".""Square_area"" <= {0} 
+                AND ""Warehouse"".""Square_area"" <= {1} 
                 AND ""Warehouse"".""Square_area"" >= {0}", min, max);
 
             return cats.ToList();

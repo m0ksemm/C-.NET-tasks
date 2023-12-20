@@ -196,13 +196,7 @@ namespace RGR
             return str;
         }
         #endregion
-
-
-
-
-        
-
-
+        #region Warehouses
         public void ShowAllWarehouses(List<Warehouse> warehouses)
         {
             Console.WriteLine("{0,3}|{1,15}|{2,15}|{3,5}|{4,25}", "Id", "Name", "City", "Sq.ar", "Addres");
@@ -250,9 +244,8 @@ namespace RGR
             string add = Console.ReadLine();
             return add;
         }
-
-
-        /// /// /// /// /// 
+        #endregion
+        #region WarehousesProducts
         public void ShowAllWarehousesProducts(List<WarehouseProduct> wp)
         {
             Console.WriteLine("{0,3}|{1,15}|{2,25}", "Id", "Warehouse", "Product");
@@ -292,5 +285,6 @@ namespace RGR
             string str = Console.ReadLine();
             return str;
         }
+        #endregion
     }
 }
